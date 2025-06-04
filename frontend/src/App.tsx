@@ -5,7 +5,6 @@ import CreateUserTab from './Components/CreateUser/CreateUserTab';
 function App() {
   return (
     <div>
-      <p>burasi</p>
       <CreateUserTab/>
     </div>
       

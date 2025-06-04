@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import "./CreateUserTab.css";
 
 type Props = {}
 
@@ -40,8 +40,8 @@ const CreateUserTab = (props: Props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='page-bg'>
+      <form onSubmit={handleSubmit} className='input-container'>
 
         <div className="input-item">
           <label htmlFor="firstName">First Name:</label>
@@ -91,7 +91,7 @@ const CreateUserTab = (props: Props) => {
           />
         </div>
 
-        <button type="submit">Create User</button>
+        <button className='submit-button' type="submit">Create User</button>
       </form>
     </div>
   );
