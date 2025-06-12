@@ -10,16 +10,19 @@ public class UserMapper {
             userDto.get_firstName(),
             userDto.get_lastName(),
             userDto.get_email(),
-            userDto.get_password()
+            userDto.get_password(),
+            userDto.get_songs()
         );
     }
 
     public static UserDto mapToUserDto(User user) {
         return new UserDto(
-                user.getId(),
+                user.get_id(),
                 user.get_firstName(),
                 user.get_lastName(),
                 user.get_email(),
-                user.get_password());
+                user.get_password(),
+                user.get_songs()
+                );
     }
 }

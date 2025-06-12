@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final IAuthService authService;
+    private final IAuthService _IAuthService;
 
     @PostMapping("/register")
     public ResponseEntity<UserDto> registerUser(@RequestBody UserDto userDto) {
-        UserDto createdUser = authService.register(userDto);
+        UserDto createdUser = _IAuthService.register(userDto);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> loginUser(@RequestBody LoginRequestDto request) {
-        LoginResponseDto response = authService.login(request);
+        LoginResponseDto response = _IAuthService.login(request);
         return ResponseEntity.ok(response);
     }
 }

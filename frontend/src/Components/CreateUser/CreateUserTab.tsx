@@ -43,10 +43,9 @@ const CreateUserTab = (props: Props) => {
   };
 
   return (
-    <div className='page-bg'>
-      <form onSubmit={handleSubmit} className='input-container'>
+      <form onSubmit={handleSubmit} className='su-input-container'>
 
-        <div className="input-item">
+        <div className="su-input-item">
           <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
@@ -58,7 +57,7 @@ const CreateUserTab = (props: Props) => {
           />
         </div>
 
-        <div className="input-item">
+        <div className="su-input-item">
           <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
@@ -70,7 +69,7 @@ const CreateUserTab = (props: Props) => {
           />
         </div>
 
-        <div className="input-item">
+        <div className="su-input-item">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -82,7 +81,7 @@ const CreateUserTab = (props: Props) => {
           />
         </div>
 
-        <div className="input-item">
+        <div className="su-input-item">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -94,9 +93,8 @@ const CreateUserTab = (props: Props) => {
           />
         </div>
 
-        <button className='submit-button' type="submit">Create User</button>
+        <button className='su-submit-button' type="submit">Create User</button>
       </form>
-    </div>
   );
 };
 

@@ -1,5 +1,8 @@
 package com.example.demo.dto;
 
+import com.example.demo.entity.Song;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,4 +18,5 @@ public class UserDto {
     private String _lastName;
     private String _email;
     private String _password;
+    private List<Song> _songs;
 }

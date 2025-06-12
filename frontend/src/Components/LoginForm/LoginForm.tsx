@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-//import "./LoginForm.css"
+import "./LoginForm.css"
 
 type Props = {}
 
@@ -40,10 +40,9 @@ const LoginForm = (props: Props) => {
   };
 
   return (
-    <div className='page-bg'>
-      <form onSubmit={handleSubmit} className='input-container'>
+    <form onSubmit={handleSubmit} className='li-input-container'>
 
-        <div className="input-item">
+        <div className="li-input-item">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -55,7 +54,7 @@ const LoginForm = (props: Props) => {
           />
         </div>
 
-        <div className="input-item">
+        <div className="li-input-item">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -67,9 +66,8 @@ const LoginForm = (props: Props) => {
           />
         </div>
 
-        <button className='submit-button' type="submit">Create User</button>
+        <button className='li-submit-button' type="submit">Create User</button>
       </form>
-    </div>
   );
 }
 

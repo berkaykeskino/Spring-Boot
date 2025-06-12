@@ -1,21 +1,9 @@
-/* Full-page background */
-.page-bg {
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    /* soft gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 /* Form container */
-.input-container {
+.su-input-container {
     background-color: white;
     height: auto;
-    width: 90%;
-    max-width: 400px;
+    width: 30%;
+    min-width: 300px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -26,7 +14,7 @@
 }
 
 /* Each input-label pair */
-.input-item {
+.su-input-item {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -54,7 +42,7 @@
 }
 
 /* Submit Button */
-.submit-button {
+.su-submit-button {
     padding: 10px;
     background-color: #0072ff;
     color: white;
@@ -65,6 +53,6 @@
     transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
+.su-submit-button:hover {
     background-color: #005fcc;
 }
