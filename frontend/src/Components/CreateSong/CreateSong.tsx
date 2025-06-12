@@ -53,14 +53,13 @@ const CreateSong = (props: Props) => {
       };
 
   return (
-    <div className='page-bg'>
-      <form onSubmit={handleSubmit} className='input-container'>
+    <form onSubmit={handleSubmit} className='cs-input-container'>
 
         <div className="input-item">
-          <label htmlFor="email">User:</label>
+          <label htmlFor="user">User:</label>
           <input
             type="text"
-            id="email"
+            id="user"
             name="_user"
             value={songData._user}
             onChange={handleChange}
@@ -69,10 +68,10 @@ const CreateSong = (props: Props) => {
         </div>
 
         <div className="input-item">
-          <label htmlFor="password">Lyrics:</label>
+          <label htmlFor="lyrics">Lyrics:</label>
           <input
             type="text"
-            id="a"
+            id="lyrics"
             name="_lyrics"
             value={songData._lyrics}
             onChange={handleChange}
@@ -81,10 +80,10 @@ const CreateSong = (props: Props) => {
         </div>
 
         <div className="input-item">
-          <label htmlFor="password">Publish Date:</label>
+          <label htmlFor="publishDate">Publish Date:</label>
           <input
             type="text"
-            id="b"
+            id="publishDate"
             name="_publishDate"
             value={songData._publishDate}
             onChange={handleChange}
@@ -92,9 +91,8 @@ const CreateSong = (props: Props) => {
           />
         </div>
 
-        <button className='submit-button' type="submit">Create User</button>
-      </form>
-    </div>
+        <button className='cs-submit-button' type="submit">Create Song</button>
+    </form>
   )
 }
 

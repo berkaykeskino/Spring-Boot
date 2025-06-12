@@ -1,0 +1,46 @@
+.nb-container {
+    position: relative;
+    background: linear-gradient(to right, #2eb410, #0072ff);
+    width: 100vw;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Position elements at percentages of the width */
+.nb-amblem,
+.nb-search,
+.nb-other-pages {
+    position: absolute;
+    transform: translateX(-50%);
+    /* Center at the point */
+}
+
+.nb-amblem {
+    left: 20%;
+}
+
+.nb-search {
+    left: 35%;
+}
+
+.nb-other-pages {
+    left: 75%;
+    display: flex;
+    gap: 20px;
+}
+
+.nb-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.nb-link:hover {
+    text-decoration: underline;
+}
