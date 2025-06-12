@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import CreateUserTab from './Components/CreateUser/CreateUserTab';
+import { Outlet } from 'react-router';
 
 function App() {
   return (
     <div>
-      <CreateUserTab/>
+      this is app.txt
+      <Outlet />
     </div>
       
   );

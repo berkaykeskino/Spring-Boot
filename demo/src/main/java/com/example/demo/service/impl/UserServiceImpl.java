@@ -18,15 +18,6 @@ public class UserServiceImpl implements IUserService {
     private UserRepository _userRepository;
 
     @Override
-    public UserDto createUser(UserDto userDto){
-
-        User user = UserMapper.mapToUser(userDto);
-        User savedUser = _userRepository.save(user);
-
-        return UserMapper.mapToUserDto(savedUser);
-    }
-
-    @Override
     public UserDto getUserById(Long userId){
         User user = _userRepository.findById(userId).
                                     orElseThrow(

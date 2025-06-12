@@ -1,21 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import "./CreateUserTab.css";
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+//import "./LoginForm.css"
 
 type Props = {}
 
-const CreateUserTab = (props: Props) => {
-  const [userData, setSignupData] = useState({
-    _firstName: "",
-    _lastName: "",
+const LoginForm = (props: Props) => {
+  const [userData, setLoginData] = useState({
     _email: "",
     _password: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setSignupData({
+    setLoginData({
       ...userData,
       [name]: value
     });
@@ -27,15 +25,14 @@ const CreateUserTab = (props: Props) => {
     e.preventDefault();
 
     try {
-        console.log(userData);
-      const response = await axios.post("http://localhost:8080/api/auth/register", userData);
-
+      const response = await axios.post("http://localhost:8080/api/auth/login", userData);
+        
       // Optional: handle token only if backend returns it
       if (response.data.token) {
         localStorage.setItem('token', response.data.token);
       }
-      console.log("user created");
-      navigate("/login");
+      console.log("login successful");
+      navigate("/");
 
     } catch (error) {
       console.error("Error creating user:", error);
@@ -45,30 +42,6 @@ const CreateUserTab = (props: Props) => {
   return (
     <div className='page-bg'>
       <form onSubmit={handleSubmit} className='input-container'>
-
-        <div className="input-item">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            name="_firstName"
-            value={userData._firstName}
-            onChange={handleChange}
-            className="input-text"
-          />
-        </div>
-
-        <div className="input-item">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            name="_lastName"
-            value={userData._lastName}
-            onChange={handleChange}
-            className="input-text"
-          />
-        </div>
 
         <div className="input-item">
           <label htmlFor="email">Email:</label>
@@ -98,6 +71,6 @@ const CreateUserTab = (props: Props) => {
       </form>
     </div>
   );
-};
+}
 
-export default CreateUserTab;
+export default LoginForm
