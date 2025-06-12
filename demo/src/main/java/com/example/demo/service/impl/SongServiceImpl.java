@@ -18,8 +18,6 @@ public class SongServiceImpl implements ISongService{
 
     @Override
     public SongDto createSong(SongDto songDto){
-        System.out.println(songDto.toString()+" AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        System.out.println(songDto.get_lyrics()+" "+songDto.get_publishDate());
         Song song = SongMapper.mapToSong(songDto);
         Song savedSong = _songRepository.save(song);
 
