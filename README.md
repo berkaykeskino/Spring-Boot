@@ -1,6 +1,12 @@
 # Spring-Boot
 
 To run the app on Windows:
-* Configure "\Spring-Boot\demo\src\main\resources\application.properties" file's spring.datasource.username and spring.datasource.password to an existing MySQL connection. Create a database called "demo" in that connection.
-* Run ".\gradlew.bat bootRun" in "\Spring-Boot\demo" path in a terminal.
-* Run "npm start" in "\Spring-Boot\frontend" path in a different terminal.
+
+1. Configure `\Spring-Boot\demo\src\main\resources\application.properties` with your MySQL connection.
+2. Create a database called `demo` in MySQL.
+3. In a terminal, run: `.\gradlew.bat bootRun` from `\Spring-Boot\demo`.
+4. In another terminal, go to `\Spring-Boot\frontend`, run:
+
+   ```bash
+   npm install
+   npm start
