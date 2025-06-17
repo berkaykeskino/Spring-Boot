@@ -33,7 +33,6 @@ public class Song {
     @Column(name = "lyrics", columnDefinition = "TEXT")
     private String _lyrics;
 
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") // FK to User
-    private User _user;
+    private long _userId;
 }

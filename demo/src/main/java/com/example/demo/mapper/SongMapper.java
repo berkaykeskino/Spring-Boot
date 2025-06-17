@@ -9,7 +9,7 @@ public class SongMapper {
             songDto.get_songId(),
             songDto.get_publishDate(),
             songDto.get_lyrics(),
-            songDto.get_user()
+            songDto.get_userId()
         );
     }
 
@@ -18,7 +18,7 @@ public class SongMapper {
                 song.get_songId(),
                 song.get_publishDate(),
                 song.get_lyrics(),
-                song.get_user()
+                song.get_userId()
         );
     }
 }

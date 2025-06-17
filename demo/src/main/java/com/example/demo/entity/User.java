@@ -39,7 +39,7 @@ public class User {
     @Column(name = "password", nullable = false, unique = true)
     private String _password;
 
-    @OneToMany(mappedBy = "_user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "_userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Song> _songs;
 
 }
