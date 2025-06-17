@@ -1,0 +1,12 @@
+/* Full-page background */
+.viewSongPage {
+    height: 60vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* soft gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

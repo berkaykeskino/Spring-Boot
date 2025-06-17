@@ -32,9 +32,7 @@ const CreateSong = (props: Props) => {
             const payload = {
                 _lyrics: songData._lyrics,
                 _publishDate: songData._publishDate,
-                _user: {
-                  _id: songData._user
-                }
+                _userId: songData._user
               };
 
               console.log(payload);

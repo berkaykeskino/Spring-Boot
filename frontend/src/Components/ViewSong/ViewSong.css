@@ -1,0 +1,58 @@
+/* Form container */
+.vs-input-container {
+    background-color: white;
+    height: auto;
+    width: 30%;
+    min-width: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Each input-label pair */
+.input-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.input-item label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+.input-text {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: #0072ff;
+}
+
+/* Submit Button */
+.vs-submit-button {
+    padding: 10px;
+    background-color: #0072ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vs-submit-button:hover {
+    background-color: #005fcc;
+}
