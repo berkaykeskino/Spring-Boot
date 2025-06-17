@@ -16,7 +16,7 @@ const NavBar = (props: Props) => {
                 <Link to="/createSong" className="nb-link">Create Song</Link>
             </p>
             <p>
-                P2
+                <Link to="/viewSong" className="nb-link">View Song</Link>
             </p>
         </div>
     </div>
