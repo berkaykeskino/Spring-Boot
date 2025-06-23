@@ -15,4 +15,6 @@ public class SongDto {
     private String _publishDate;
     private String _lyrics;
     private long _userId;
+    private String _userFirstName;
+    private String _userLastName;
 }

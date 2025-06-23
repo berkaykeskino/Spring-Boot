@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.SongDto;
 import com.example.demo.entity.Song;
+import com.example.demo.entity.User;
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.mapper.SongMapper;
 import com.example.demo.repository.SongRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.ISongService;
 
 import lombok.AllArgsConstructor;
@@ -18,21 +20,29 @@ import lombok.AllArgsConstructor;
 public class SongServiceImpl implements ISongService{
 
     private SongRepository _songRepository;
+    private UserRepository _userRepository;
 
     @Override
     public SongDto createSong(SongDto songDto){
         Song song = SongMapper.mapToSong(songDto);
-        Song savedSong = _songRepository.save(song);
+        User user = _userRepository.findById(songDto.get_userId()).orElseThrow(
+                () -> new ResourceNotFoundException("User not found for attempted song creation"));
 
-        return SongMapper.mapToSongDto(savedSong);
+        Song savedSong = _songRepository.save(song);
+        return SongMapper.mapToSongDto(savedSong, user);
     }
 
     @Override
-    public List<SongDto> getAllSongs(){
+    public List<SongDto> getAllSongs() {
         List<Song> songs = _songRepository.findAll();
-        
+
         return songs.stream()
-                .map(song -> SongMapper.mapToSongDto(song))
+                .map(song -> {
+                    User user = _userRepository.findById(song.get_userId())
+                            .orElseThrow(() -> new ResourceNotFoundException(
+                                    "User not found for song ID: " + song.get_songId()));
+                    return SongMapper.mapToSongDto(song, user);
+                })
                 .toList();
     }
 
@@ -41,7 +51,9 @@ public class SongServiceImpl implements ISongService{
                                     orElseThrow(
                                         () -> new ResourceNotFoundException("Song not found with ID: " + songId)
                                     );
+        User user = _userRepository.findById(song.get_userId()).orElseThrow(
+                () -> new ResourceNotFoundException("User not found for attempted song creation"));
 
-        return SongMapper.mapToSongDto(song);
+        return SongMapper.mapToSongDto(song, user);
     }
 }
