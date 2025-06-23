@@ -66,7 +66,7 @@ const LoginForm = (props: Props) => {
           />
         </div>
 
-        <button className='li-submit-button' type="submit">Create User</button>
+        <button className='li-submit-button' type="submit">Login</button>
       </form>
   );
 }
