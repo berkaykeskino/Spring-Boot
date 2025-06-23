@@ -1,15 +1,20 @@
-import React from 'react'
-import ViewSong from '../../Components/ViewSong/ViewSong'
-import "./ViewSongPage.css"
+import React, { useState } from 'react';
+import ViewSong from '../../Components/ViewSong/ViewSong';
+import SongCard from '../../Components/SongCard/SongCard';
+import './ViewSongPage.css';
 
-type Props = {}
+type Props = {};
 
 const ViewSongPage = (props: Props) => {
-  return (
-    <div className='viewSongPage'>
-        <ViewSong/>
-    </div>
-  )
-}
+  const [fetchedSong, setFetchedSong] = useState<any>(null);
 
-export default ViewSongPage
+  return (
+    <div className="viewSongPage">
+      <ViewSong onSongFetched={setFetchedSong} />
+
+      {fetchedSong && <SongCard song={fetchedSong} />}
+    </div>
+  );
+};
+
+export default ViewSongPage;
